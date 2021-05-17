@@ -11,7 +11,7 @@
 </head>
 <body onload="loadImage('preview')">
   <div>
-    <p>テスト</p>
+    <p>ガルフ短冊メーカー超絶ラフ</p>
     <p><canvas id="preview"></canvas></p>
     <p>
       <input type="text" id="canvas_text" value="ガルフカナウットトライピパタナポン">
@@ -44,7 +44,8 @@
   	var ctx = canvas.getContext('2d');
   	var text = document.getElementById(text_id);
   	//文字のスタイルを指定
-  	ctx.font = '60px serif';
+  	ctx.font = '30px serif';
+		ctx.color = 'white';
   	ctx.fillStyle = '#404040';
   	//文字の配置を指定（左上基準にしたければtop/leftだが、文字の中心座標を指定するのでcenter
   	ctx.textBaseline = 'center';
