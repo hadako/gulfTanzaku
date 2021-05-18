@@ -57,7 +57,8 @@
 	};
 
 	function tategaki(ctx, text, x, y) {
-	var textList = text.split('\n');
+	//var textList = text.split('\n');
+	var textList = text
 	var lineHeight = context.measureText("あ").width;
 	textList.forEach(function(elm, i) {
 		Array.prototype.forEach.call(elm, function(ch, j) {
