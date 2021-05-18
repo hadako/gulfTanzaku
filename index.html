@@ -53,21 +53,24 @@
 
   	var x = (canvas.width / 2);
   	var y = (canvas.height / 2);
-		tategaki(ctx,text,x,y)
+
+//縦書きファンクション
+		var tategaki = function(ctx, text, x, y) {
+	  var textList = text.split('\n');
+	  var lineHeight = context.measureText("あ").width;
+	  textList.forEach(function(elm, i) {
+	    Array.prototype.forEach.call(elm, function(ch, j) {
+	      context.fillText(ch, x-lineHeight*i, y+lineHeight*j);
+	    });
+	  });
+	};
+
+
   	//ctx.fillText(text.value, x, y);
 
   }
 
 	//縦書きファンクション
-	var tategaki = function(context, text, x, y) {
-  var textList = text.split('\n');
-  var lineHeight = context.measureText("あ").width;
-  textList.forEach(function(elm, i) {
-    Array.prototype.forEach.call(elm, function(ch, j) {
-      context.fillText(ch, x-lineHeight*i, y+lineHeight*j);
-    });
-  });
-};
 
   </script>
 
