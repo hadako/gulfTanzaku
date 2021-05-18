@@ -12,9 +12,9 @@
 <body onload="loadImage('preview')">
   <div textAlign="center">
     <p>ガルフ短冊メーカー技術確認</p>
-    <p><canvas id="preview" style="display: block; margin: auto;"></canvas></p>
+    <p><canvas id="preview"></canvas></p>
     <p>
-      <input type="text" style="display: block; margin: auto;" id="canvas_text" value="ガルフカナウットトライピパタナポン">
+      <input type="text" id="canvas_text" value="ガルフカナウットトライピパタナポン">
       <button onclick="drawText('preview', 'canvas_text');">入力</button>
     </p>
   </div>
@@ -33,7 +33,7 @@
   		//キャンバスのサイズを画像サイズに合わせる
   		canvas.width = image.width;
   		canvas.height = image.height;
-  		//キャンバスに画像を描画（開始位置0,0）変えた
+  		//キャンバスに画像を描画（開始位置0,0）
   		ctx.drawImage(image, 0, 0);
   	});
   }
@@ -44,16 +44,31 @@
   	var ctx = canvas.getContext('2d');
   	var text = document.getElementById(text_id);
   	//文字のスタイルを指定
-  	ctx.font = '20px sans-s';
+  	ctx.font = '40px sans-s';
   	ctx.fillStyle = '#FFFFFF'; //文字色
   	//文字の配置を指定（左上基準にしたければtop/leftだが、文字の中心座標を指定するのでcenter
   	ctx.textBaseline = 'center';
   	ctx.textAlign = 'center';
   	//座標を指定して文字を描く（座標は画像の中心に）
+
   	var x = (canvas.width / 2);
   	var y = (canvas.height / 2);
-  	ctx.fillText(text.value, x, y);
+		tategaki(ctx,text,x,y)
+  	//ctx.fillText(text.value, x, y);
+		*/
   }
+
+	//縦書きファンクション
+	var tategaki = function(context, text, x, y) {
+  var textList = text.split('\n');
+  var lineHeight = context.measureText("あ").width;
+  textList.forEach(function(elm, i) {
+    Array.prototype.forEach.call(elm, function(ch, j) {
+      context.fillText(ch, x-lineHeight*i, y+lineHeight*j);
+    });
+  });
+};
+
   </script>
 
 
