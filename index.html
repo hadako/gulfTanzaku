@@ -10,11 +10,11 @@
 	<script src="js/script.js"></script>
 </head>
 <body onload="loadImage('preview')">
-  <div>
+  <div textAlign="center">
     <p>ガルフ短冊メーカー技術確認</p>
-    <p><canvas id="preview" height = "100" style="display: block; margin: auto;"></canvas></p>
+    <p><canvas id="preview" style="display: block; margin: auto;"></canvas></p>
     <p>
-      <input type="text" id="canvas_text" value="ガルフカナウットトライピパタナポン">
+      <input type="text" style="display: block; margin: auto;" id="canvas_text" value="ガルフカナウットトライピパタナポン">
       <button onclick="drawText('preview', 'canvas_text');">入力</button>
     </p>
   </div>
