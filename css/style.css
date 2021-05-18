@@ -2,18 +2,3 @@ input{
   width:250px;
   height:30px;
     }
-
-canvas{
-  position: absolute;
-  margin: auto;
-  }
-
-button{
-  position: absolute;
-  margin: auto;
-}
-
-input{
-  position: absolute;
-  margin: auto;
-}
